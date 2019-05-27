@@ -105,7 +105,8 @@ async function service (req, res) {
   let parts = p.match(/\/([^\/]*)\/(.*)/)
   let pathdomain = parts[1]
   let remainingpath = parts[2]
-  let protocol = insecure_origins.includes(pathdomain) ? 'http' : 'https'
+  // let protocol = insecure_origins.includes(pathdomain) ? 'http' : 'https'
+  let protocol = 'http'
   console.log(`${protocol}://${pathdomain}/${remainingpath}`)
   let f = await fetch(
     `${protocol}://${pathdomain}/${remainingpath}`,
